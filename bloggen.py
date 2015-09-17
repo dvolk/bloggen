@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 import markdown
 import glob
 import codecs
@@ -65,9 +68,9 @@ def mk_pagination(index, page, pages):
     if pages == 1: return
     index.write("<div class='bottom'>")
     if page + 1 != pages:
-        index.write("<a href='./index-{0}.html'><p style='font-size: 1.4em; display: inline;'><b>&lt; prev</b></p></a> ".format(str(page + 1)))
+        index.write("<a href='./index-{0}.html'><p style='font-size: 1.4em; display: inline;'><b>← prev</b></p></a> ".format(str(page + 1)))
     if page != 0:
-        index.write("<a href='./{0}'><p style='font-size: 1.4em; display: inline;'><b>next &gt;</b></p></a><br/>".format(mk_index_filename(page - 1)))
+        index.write("<a href='./{0}'><p style='font-size: 1.4em; display: inline;'><b>next →</b></p></a><br/>".format(mk_index_filename(page - 1)))
     index.write("</div>")
 
 def mk_entry(out_doc, post, in_entry):
@@ -81,12 +84,15 @@ def mk_entry(out_doc, post, in_entry):
     if post.author or post.time:
         out_doc.write("<br/><p style='font-size:0.8em;display: inline'>")
         if post.time:   out_doc.write(" <b>{0}</b>".format(datetime.datetime.strftime(post.time, '%Y-%m-%d')))
-        if post.author: out_doc.write(" by <b>{0}</b>".format(str(post.author)))
+        if post.author: out_doc.write(" by <b>{0}</b>".format(post.author.text))
         out_doc.write("</p>")
     if post.snip is not None:
-        out_doc.write(str(post.snip))
-    if post.rest is not None and not in_entry:
-        out_doc.write("<p>{0}(read more)</a></p>".format(link))
+        out_doc.write(unicode(str(post.snip), 'utf-8'))
+    if post.rest is not None:
+        if not in_entry:
+            out_doc.write("<p>{0}(read more)</a></p>".format(link))
+        else:
+            out_doc.write(unicode(str(post.rest), 'utf-8'))
     out_doc.write("</div>")
 
 def main():
@@ -127,11 +133,9 @@ def main():
             # write blog post file
             out_filename = './generated/posts/{0}.html'.format(os.path.basename(in_filename))
             with codecs.open(out_filename, mode = 'w', encoding="utf-8", errors="xmlcharrefreplace") as out_doc:
-                out_doc.write(header.format('{0} - {1}'.format(post.title, site_name), author, description))
+                out_doc.write(header.format("{0} - {1}".format(post.title, site_name), author, description))
                 out_doc.write(post_header.format(site_name))
                 mk_entry(out_doc, post, in_entry = True)
-                if rest_content is not None:
-                    out_doc.write(str(rest_content))
                 out_doc.write(footer)
 
     # sort posts by date with posts with no date at the bottom
