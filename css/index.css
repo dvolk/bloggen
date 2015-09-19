@@ -1,20 +1,35 @@
 body {
-    background-color: #cccccc;
+    background-color: #ccc;
     color: #444444;
 }
 
 div.outer {
-}
-
-div.inner {
     background-color: white;
     margin: 0 auto;
-    width: 30%;
-    min-width: 600px;
+    width: 600px;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-bottom: 0.5%;
     border: 3px solid #555555;
+}
+
+@media screen and (max-width: 600px) {
+   div.outer {
+      width: 99%;
+   }
+}
+
+pre {
+    padding: 3px;
+    margin: 0px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+div.inner {
 }
 
 div.entry {
@@ -25,15 +40,68 @@ h1 {
     margin-bottom: 1%;
     padding-bottom: 0.5%;
     margin-top: 0.5%;
-    border-bottom: 3px solid #555555;
     color: #000000;
+}
+
+div.header {
+    border-bottom: 3px solid #555555;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+div.logo a {
+    color: black;
+    float: left;
+    text-decoration: none;
+}
+
+a#rss {
+    font-size: 1.2em;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #FFA500;
+}
+
+a#about {
+    font-size: 1.2em;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #CAFF70;
+}
+
+a#github {
+    font-size: 1.2em;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #97FFFF;
+}
+
+a.page_nav {
+    font-size: 1.4em;
+    color: white;
+    padding: 2px;
+    background-color: #FF4040;
+}
+
+p.page_nav {
+    word-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+div.navigation {
+    text-align: right;
 }
 
 div.bottom {
     margin-top: 1%;
     padding-top: 1%;
-    margin-bottom: 1%;
-    border-top: 3px solid #555555;
+#    margin-bottom: 1%;
+    border-top: 3px solid #777;
 }
 
 h2 {
@@ -43,6 +111,10 @@ h2 {
 a {
     color: steelblue;
     text-decoration: none;
+}
+
+a#black {
+    color: black;
 }
 
 p {
