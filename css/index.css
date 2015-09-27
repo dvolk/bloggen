@@ -1,16 +1,44 @@
 body {
+    font-size: 13px;
     background-color: #ccc;
-    color: #444444;
+    color: #444;
+    font-family: "DejaVu Sans";
 }
 
+
 div.outer {
+    #box-shadow: -5px 0px 5px grey, 5px 0px 5px grey;
     background-color: white;
     margin: 0 auto;
     width: 600px;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-    padding-bottom: 0.5%;
-    border: 3px solid #555555;
+    border: 1px solid #aaa;
+    #padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 2em;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1em;
+    margin: 0
+}
+
+span.date_text {
+    font-size: 0.8em; color: #777;
+}
+
+h2 {
+}
+
+h3 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+li {
+    margin-left: 0em;
 }
 
 @media screen and (max-width: 600px) {
@@ -20,6 +48,13 @@ div.outer {
 }
 
 pre {
+    #font-family: "DejaVu Sans Mono";
+    font-size: 0.85em;
+    color: #cccccc;
+    background-color: #181a26;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
     padding: 3px;
     margin: 0px;
     white-space: pre-wrap;       /* CSS 3 */
@@ -29,11 +64,18 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+div.toc {
+    margin: 1em;
+}
+
 div.inner {
 }
 
 div.entry {
-    margin-bottom: 1%;
+}
+
+img {
+    border: 1px solid #aaa;
 }
 
 h1 {
@@ -44,7 +86,7 @@ h1 {
 }
 
 div.header {
-    border-bottom: 3px solid #555555;
+    border-bottom: 1px solid #aaa;
     padding-bottom: 4px;
     margin-bottom: 6px;
 }
@@ -56,27 +98,20 @@ div.logo a {
 }
 
 a#rss {
+    border: 0px;
+    border-radius: 5px;
     font-size: 1.2em;
     color: black;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding: 2px 4px 2px 4px;
     background-color: #FFA500;
 }
 
-a#about {
+a.top-link {
+    border: 0px;
+    border-radius: 5px;
     font-size: 1.2em;
     color: black;
-    padding-left: 3px;
-    padding-right: 3px;
-    background-color: #CAFF70;
-}
-
-a#github {
-    font-size: 1.2em;
-    color: black;
-    padding-left: 3px;
-    padding-right: 3px;
-    background-color: #97FFFF;
+    padding: 2px 4px 2px 4px;
 }
 
 a.page_nav {
@@ -101,7 +136,7 @@ div.bottom {
     margin-top: 1%;
     padding-top: 1%;
 #    margin-bottom: 1%;
-    border-top: 3px solid #777;
+    border-top: 1px solid #aaa;
 }
 
 h2 {
@@ -118,5 +153,6 @@ a#black {
 }
 
 p {
-    margin: 0.3em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
 }
