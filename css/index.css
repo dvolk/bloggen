@@ -7,7 +7,6 @@ body {
 
 
 div.outer {
-    #box-shadow: -5px 0px 5px grey, 5px 0px 5px grey;
     background-color: white;
     margin: 0 auto;
     width: 600px;
@@ -19,32 +18,43 @@ div.outer {
     margin-bottom: 2em;
 }
 
+@media screen and (max-width: 600px) {
+   div.outer {
+      width: 99%;
+   }
+}
+
 ul {
     list-style-type: disc;
     padding-left: 1em;
     margin: 0
 }
 
+li {
+    margin-left: 0em;
+}
+
 span.date_text {
     font-size: 0.8em; color: #777;
 }
 
-h2 {
+h1 {
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+    margin-top: 2px;
+    color: #000000;
 }
+
+h2 { }
 
 h3 {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
 
-li {
-    margin-left: 0em;
-}
-
-@media screen and (max-width: 600px) {
-   div.outer {
-      width: 99%;
-   }
+h4 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 pre {
@@ -78,16 +88,14 @@ img {
     border: 1px solid #aaa;
 }
 
-h1 {
-    margin-bottom: 1%;
-    padding-bottom: 0.5%;
-    margin-top: 0.5%;
-    color: #000000;
+div.logo {
+    padding-top: 1px;
 }
 
 div.header {
     border-bottom: 1px solid #aaa;
-    padding-bottom: 4px;
+    padding-bottom: 5px;
+    #padding-top: 4px;
     margin-bottom: 6px;
 }
 
@@ -102,7 +110,7 @@ a#rss {
     border-radius: 5px;
     font-size: 1.2em;
     color: black;
-    padding: 2px 4px 2px 4px;
+    padding: 4px 4px 2px 4px;
     background-color: #FFA500;
 }
 
@@ -111,7 +119,7 @@ a.top-link {
     border-radius: 5px;
     font-size: 1.2em;
     color: black;
-    padding: 2px 4px 2px 4px;
+    padding: 4px 4px 2px 4px;
 }
 
 a.page_nav {
@@ -133,8 +141,8 @@ div.navigation {
 }
 
 div.bottom {
-    margin-top: 1%;
-    padding-top: 1%;
+    margin-top: 5px;
+    padding-top: 5px;
 #    margin-bottom: 1%;
     border-top: 1px solid #aaa;
 }
